@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .navbar{
+            display: flex;
+            justify-content: space-around;
+            background-color: rgb(44, 43, 43);
+            border: 1px solid black;
+            padding: 13px;
+            color: white;
+        
+
+        }
+       .main-container{
+        margin-left: 15px;
+       }
+        .main-container>div{
+            display: flex;
+            justify-content: space-between;
+            width: 96%;
+            margin: 12px;
+            padding: 14px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            border-radius: 10px;
+        
+
+
+
+        }
+        h2{
+            text-align: center;
+        }
+        @media all and (min-width:200px) and (max-width:768px) {
+        
+            
+            .nav-items {
+                display: none;
+            }
+            
+            .nav-items:first-child {
+                display:flex;
+                margin-right: 350px;
+            }
+
+              
+                
+            
+            .main-container>div{
+                display: grid;
+                justify-content: center;
+                text-align: center;
+                width:90%;
+                padding: 10px;
+                margin: 10px;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="nav-items">Home</div>
+        <div class="nav-items">Education</div>
+        <div class="nav-items">Project</div>
+        <div class="nav-items">Skills</div>
+        <div class="nav-items">Contact me</div>
+    </div>
+    <div class="main-container">
+        <div>
+            <div class="image">
+                <img src="https://www.pngitem.com/pimgs/m/581-5813504_avatar-dummy-png-transparent-png.png" alt="" height="100px";>
+            </div>
+            <div class="content">
+                <h2 style="color:greenyellow">Home</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, ducimus.</p>
+            </div>
+        </div>
+        <div>
+            <div class="image">
+                <img src="https://i.pinimg.com/564x/a2/56/34/a25634a9f61bf94165dbf643a340f2dd.jpg" alt="" height="100px";>
+            </div>
+            <div class="content">
+                <h2 style="color:tomato">Education</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, ducimus.</p>
+            </div>
+        </div>
+        <div>
+            <div class="image">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQogYgft5zVofA50lJUjlVjbSHFGPZGJqYj_4kdPf-i9g&s" alt="" height="100px";>
+            </div>
+            <div class="content">
+                <h2 style="color: yellowgreen">Project</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, ducimus.</p>
+            </div>
+        </div>
+        <div>
+            <div class="image">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHEu47iC6AxL7A431q6RZrCxI8rKl7e39Z_Hyc-DhpgA&s" alt="" height="100px";>
+            </div>
+            <div class="content">
+                <h2 style="color: purple">Skills</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, ducimus.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
