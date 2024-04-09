@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>Mini Calculator</title>
+    </head>
+    <body>
+        <h1>Mini - Calculator</h1>
+        <label>Enter First Number : <input type="number" id="num1"> </label>
+        <br>
+        <br>
+        <label>Enter Second Number : <input type="number" id="num2"> </label>
+        <br>
+        <br>
+        <button onclick = "add()">Add</button>&nbsp;&nbsp;&nbsp;&nbsp;
+        <button onclick = "subtract()">Subtract</button>&nbsp;&nbsp;&nbsp;&nbsp;
+        <button onclick = "multiply()">Multiply</button>&nbsp;&nbsp;&nbsp;&nbsp;
+        <button onclick = "Divide()">Divide</button>&nbsp;&nbsp;&nbsp;&nbsp;
+    
+    <script>
+        function add(){
+            let num1 = parseFloat(document.getElementById('num1').value);
+            let num2 = parseFloat(document.getElementById('num2').value);
+            alert('Result :' + (num1 + num2));
+        }
+        function subtract(){
+            let num1 = parseFloat(document.getElementById('num1').value);
+            let num2 = parseFloat(document.getElementById('num2').value);
+            alert('Result :' + (num1 - num2));
+        }
+        function multiply(){
+            let num1 = parseFloat(document.getElementById('num1').value);
+            let num2 = parseFloat(document.getElementById('num2').value);
+            alert('Result :' + (num1 * num2));
+        }
+        function Divide(){
+            let num1 = parseFloat(document.getElementById('num1').value);
+            let num2 = parseFloat(document.getElementById('num2').value);
+            alert('Result :' + (num1 / num2));
+        }
+    </script>
+    </body>
+</html>
