@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investor</title>
+    <style>
+        #head{
+            font-size: 30px;
+            text-align: center;
+        }
+        #parent{
+            height: auto;
+            width: 100%;
+            border: 0px solid ;
+        }
+        #first{
+            height: auto;
+            width: auto;
+            border: 0px solid red;
+            margin-left: 60px;
+            margin-top: 10px;
+            display: flex;
+        }
+        #fc{
+            height: 180px;
+            width: 300px;
+            margin-left: 20px;
+            justify-content: space-between;
+            padding-right: 70px;
+        }
+        #second{
+            height: auto;
+            width: auto;
+            border: 0px solid black;
+            display: grid;
+            margin-left: 6px;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            gap: 10px 10px;
+            border-radius: 12px;
+        }
+        #second>div{
+            height: 450px;
+            width: auto;
+            border: 0px solid orangered;
+            border-radius: 12px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+        #inner>img{
+            height: 250px;
+            width: 300px;
+            border-radius: 12px 12px 0 0;
+        }
+        #inner>h2{
+            font-size: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+        #inner>h3{
+            color: rgb(70, 68, 68);
+            text-align: center;
+            font-weight: bold;
+        }
+        #logo>img{
+            height: 100px;
+            width: 130px;
+            margin-left: 80px;
+        }
+        @media all and (max-width: 720px) {
+            #head{
+                font-size: 15px;
+                justify-content: center;
+            }
+            #parent{
+                height: auto;
+                width: auto;
+                border: 0px solid ;
+            }
+            #first{
+                display: grid;
+                grid-template-columns: repeat(1, 150px);
+            }
+            #second{
+                grid-template-columns: repeat(2, 1fr);
+            }
+            #fc{
+                height: auto;
+                width: auto;
+                margin-left: 10px;
+                padding-right: 10px;
+            }
+            #inner>img{
+                height: 250px;
+                width: auto;
+                border-radius: 12px 12px 0 0;
+            }
+            #inner>h2{
+                font-size: 20px;
+                text-align: center;
+                font-weight: bold;
+            }
+            #inner>h3{
+                color: rgb(70, 68, 68);
+                text-align: center;
+                font-weight: bold;
+            }
+            #logo>img{
+                height: 100px;
+                width: 130px;
+                margin-left: 80px;
+            }
+            #strat{
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="head"><h2>Board Member</h2></div>
+    <div id="parent">
+        <div id="first"></div>
+        <h1 id="strat" style="text-align: center;">Strategic Investors</h1>
+        <div id="second"></div>
+    </div>
+
+    <script>
+        const parentDiv = document.getElementById("parent");
+
+        // Create first row of investors
+        const firstRow = document.getElementById("first");
+
+        const investorsFirstRow = [
+            { imgUrl: "https://www.masaischool.com/images/our-investors/india-q-borderless.svg" },
+            { imgUrl: "https://www.masaischool.com/images/our-investors/unitus-borderless.svg" },
+            { imgUrl: "https://www.masaischool.com/images/our-investors/omidyar-borderless.svg" }
+        ];
+
+        investorsFirstRow.forEach(investor => {
+            const investorDiv = document.createElement("div");
+            investorDiv.id = "fc";
+
+            const img = document.createElement("img");
+            img.src = investor.imgUrl;
+
+            investorDiv.appendChild(img);
+            firstRow.appendChild(investorDiv);
+        });
+
+        // Create second row of investors
+        const secondRow = document.getElementById("second");
+
+        const investorsSecondRow = [
+            { imgUrl: "https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg", name: "Vijay Shekhar Sharma", role: "Founder & CEO", logo: "https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg" },
+            { imgUrl: "https://masai-website-images.s3.ap-south-1.amazonaws.com/Rectangle_427_637d69bb57.png", name: "Kunal Shah", role: "Founder", logo: "https://masai-website-images.s3.ap-south-1.amazonaws.com/cred_0a47d7b4f8.png" },
+            { imgUrl: "https://masai-website-images.s3.ap-south-1.amazonaws.com/amrish_rau_pine_labs_144e5e587c.jpg", name: "Amrish Rau", role: "CEO", logo: "https://masai-website-images.s3.ap-south-1.amazonaws.com/pine_labs_0aa2407434.png" },
+            {imgUrl : "https://masai-website-images.s3.ap-south-1.amazonaws.com/Sampad_swain_Instamojo_f12bf6341e.jpg", name : "Sampad swain", role : "Co -Founder & CEO", logo : "https://masai-website-images.s3.ap-south-1.amazonaws.com/instamojo_8763e704f7.png"},
+            {imgUrl : "https://masai-website-images.s3.ap-south-1.amazonaws.com/Ankush_Sachdeva_Sharechat_4e44dbbe6b.jpg", name : "Ankush schdeva", role : "Co-founder & CEO", logo : "https://masai-website-images.s3.ap-south-1.amazonaws.com/sharechat_rect_73d95cd4e1.svg"},
+            {imgUrl: "https://masai-website-images.s3.ap-south-1.amazonaws.com/bhanu_pratap_singh_sharechat_11fdd7b47a.jpg", name : "Bhanu pratap singh", role : "Co- founder & CTO", logo : "https://masai-website-images.s3.ap-south-1.amazonaws.com/sharechat_rect_73d95cd4e1.svg"},
+            {imgUrl:"https://masai-website-images.s3.ap-south-1.amazonaws.com/farid_ahsan_sharechat_1251f28141.png", name : "Farid ahshan",role :"Co-founder & COO", logo : "https://masai-website-images.s3.ap-south-1.amazonaws.com/sharechat_rect_73d95cd4e1.svg"  } ,
+            {imgUrl : "https://masai-website-images.s3.ap-south-1.amazonaws.com/Amit_Kumar_Agarwal_Nobroker_a8a279ad91.jpg", name :"Amit agrwal ", role: "Founder & CEO", logo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/nobroker_rect_28c9778c30.svg"},
+            {imgUrl:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Akhil_Gupta_Nobroker_539cd97f6c.jpg", name: "Akhil gupta", role: "Founder & CTO", logo: "https://masai-website-images.s3.ap-south-1.amazonaws.com/nobroker_rect_28c9778c30.svg"},
+            {imgUrl:"https://masai-website-images.s3.ap-south-1.amazonaws.com/saurbh_garg_nobroker_c0c71cc431.jpeg", name:"Saurabh garg", role:"Founder & CTO", logo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/nobroker_rect_28c9778c30.svg"},
+            {imgUrl:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Vipin_Pathak_Care24_acd02cd173.jpg", name :"Vipin pathak", role:"CEO", logo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/care24_1164f7a2cd.png"},
+            {imgUrl:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Ramakant_Sharma_livespace_0308e3627d.jpg", name:"Ramakant sharma", role:"Founder`", logo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/livspace_f9318b2e8d.png"},
+            {imgUrl:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Mohit_Tandon_Delhivery_b43fee16c4.jpg", name:"Mohit tandon", role: "Co-founder", logo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/delhivery_17e85a76ed.png"},
+            {imgUrl:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Abhishek_Goyal_tracxn_5b2f61d87d.jpg", name:"Abhishek goyal", role:"Co-founder", logo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/tracxn_6d0c3de2ee.svg"},
+            {imgUrl:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Anurag_Jain_Kredx_b6ed6a31c6.jpg", name:"Anurag jain", role: "Founder & ED", logo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/kredx_rect_204437078a.svg"},
+            {imgUrl:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Harshvardhan_Lunia_Lendingkart_44d72a6fcd.jpg", name:"Harshvardhan lunia", role:"Co-founder& CEO", logo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/lendingkart_rect_d0d30d7b53.svg"},
+            {imgUrl:"https://masai-website-images.s3.ap-south-1.amazonaws.com/sunil_rao_amazon_dfd2daa06d.jpeg", name:"Sunil rao", role:"CHS & cooper", logo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/amazon_rect_9e0cd101b1.svg"},
+            {imgUrl:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Sharda_Balaji_Novojuris_2a206f2f88.jpg", name:"Sharda balaji", role:"Founder", logo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/novojuris_ad9499f5b9.svg"},
+            {imgUrl:"https://masai-website-images.s3.ap-south-1.amazonaws.com/Kulin_Shah_Onsurity_0dd3a1802f.jpg", name:"Kulin shah", role:"Co-founder", logo:"https://masai-website-images.s3.ap-south-1.amazonaws.com/onsurity_5500f1c3b1.png"}
+
+            // Add more investors as needed
+        ];
+
+        investorsSecondRow.forEach(investor => {
+            const boxDiv = document.createElement("div");
+            boxDiv.id = "box";
+
+            const innerDiv = document.createElement("div");
+            innerDiv.id = "inner";
+
+            const img = document.createElement("img");
+            img.src = investor.imgUrl;
+
+            const name = document.createElement("h2");
+            name.textContent = investor.name;
+
+            const role = document.createElement("h3");
+            role.textContent = investor.role;
+
+            const logoDiv = document.createElement("div");
+            logoDiv.id = "logo";
+
+            const logoImg = document.createElement("img");
+            logoImg.src = investor.logo;
+
+            logoDiv.appendChild(logoImg);
+            innerDiv.appendChild(img);
+            innerDiv.appendChild(name);
+            innerDiv.appendChild(role);
+            innerDiv.appendChild(logoDiv);
+            boxDiv.appendChild(innerDiv);
+            secondRow.appendChild(boxDiv);
+        });
+    </script>
+</body>
+</html>

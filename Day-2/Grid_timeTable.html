@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grid Layer</title>
+<style>
+    body {
+        font-family: cursive;
+  margin: 0;
+  padding: 0;
+}
+
+.grid-layer {
+  margin: 20px;
+}
+
+.heading {
+  text-align: center;
+  padding: 4px;
+ font-size: 40px;
+ font-weight: bold;
+}
+
+.grid {
+
+  display: grid;
+  justify-content: center;
+ 
+ 
+  grid-template-columns: repeat(6, 180px);
+  gap: 6px;
+}
+
+.teal {
+    background-color: rgb(157, 240, 240);
+  border-radius: 15px;
+  padding: 8px;
+  text-align: center;
+}
+
+.pink {
+  background-color: pink;
+  border-radius: 15px;
+  padding: 10px;
+  text-align: center;
+}
+
+.yellow {
+  background-color: yellow;
+  border-radius: 15px;
+  padding: 10px;
+  text-align: center;
+}
+
+.merged-row {
+  grid-column: 1 / span 6;
+  background-color: rgb(157, 240, 240);
+  padding: 10px;
+  border-radius: 15px;
+}
+.grid > teal1:first-child{
+    display: none;
+}
+</style>
+</head>
+<body>
+<div class="grid-layer">
+  <div class="heading">✨Weekly schedule✨ </div>
+  <div class="grid">
+    <div class="teal1"></div>
+    <div class="pink">Monday</div>
+    <div class="yellow">Tuesday</div>
+    <div class="pink">Wednesday</div>
+    <div class="yellow">Thursday</div>
+    <div class="pink">Friday</div>
+    <div class="teal">08:00</div>
+    <div class="pink">  Math</div>
+    <div class="yellow">Science</div>
+    <div class="pink">Physics</div>
+    <div class="yellow">Chemistry</div>
+    <div class="pink">Biology</div>
+    <div class="teal">09:00</div>
+    <div class="pink">HTML</div>
+    <div class="yellow">CSS</div>
+    <div class="pink">JS</div>
+    <div class="yellow">DSTL</div>
+    <div class="pink">DSA</div>
+    <div class="teal">10:00</div>
+    <div class="pink">TAFL</div>
+    <div class="yellow">CD</div>
+    <div class="pink">OS</div>
+    <div class="yellow">SE</div>
+    <div class="pink">BDE</div>
+    <div class="teal">11:00</div>
+    <div class="pink">MassMedia</div>
+    <div class="yellow">Art</div>
+    <div class="pink">PT</div>
+    <div class="yellow">Library</div>
+    <div class="pink">PME</div>
+    <div class="teal">12:00</div>
+    <div class="pink">Java</div>
+    <div class="yellow">Python</div>
+    <div class="pink">C</div>
+    <div class="yellow">C#</div>
+    <div class="pink">C++</div>
+    <div class="teal">13:00</div>
+    <div class="pink">Ruby</div>
+    <div class="yellow">Django</div>
+    <div class="pink">Axios</div>
+    <div class="yellow">React</div>
+    <div class="pink">SQL</div>
+    <div class="teal">14:00</div>
+    <div class="pink">DBMS</div>
+    <div class="yellow">NAS</div>
+    <div class="pink">EE</div>
+    <div class="yellow">SDE</div>
+    <div class="pink">TOM</div>
+    <div class="teal">15:00</div>
+    <div class="pink">DOM</div>
+    <div class="yellow">BOM</div>
+    <div class="pink">Angular</div>
+    <div class="yellow">Node JS</div>
+    <div class="pink">SCE</div>
+    <div class="teal">16:00</div>
+    <div class="pink">CD</div>
+    <div class="yellow">CN</div>
+    <div class="pink">Math-II</div>
+    <div class="yellow">Physice-II</div>
+    <div class="pink">Chemistry_III</div>
+    <div class="merged-row" colspan="6">Note</div>
+  </div>
+</div>
+</body>
+</html>

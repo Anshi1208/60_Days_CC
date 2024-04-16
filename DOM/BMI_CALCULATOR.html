@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI calculator</title>
+    <style>
+        body{
+            display:flex;
+            justify-content: center;
+        }
+        .Container{
+            margin-top: 80px;
+            width: 250px;
+            box-shadow: 0px 0px 15px 15px blueviolet;
+            border-radius: 20px;
+            padding: 50px;
+            text-align: center;
+            
+        }
+        h1{
+            margin-bottom: 30px;
+        }
+        input{
+            border: none;
+            border-bottom: 2px solid blueviolet;
+            outline: none;
+            margin-bottom: 15px;
+            padding: 10px;
+            text-align: center;
+            font-size: 15px;
+
+        }
+        button{
+            width: 100%;
+            height: 30px;
+            margin-top: 25px;
+            border-radius: 20px;
+            border: none;
+            background-color: whitesmoke;
+            color: black;
+            font-size: 18px;
+
+
+        }
+        .result{
+            margin-top: 15px;
+            font-size: 18px;
+        }
+
+    </style>
+</head>
+<body>
+  
+    <div class="Container">
+        <h1>BMI calculator</h1>
+        <p><b>Height in cm</b></p>
+        <input type="number" id="height">
+        <p><b>Weight in kg</b></p>
+        <input type="number" id="weight">
+        
+
+        <button id="buttonCal"><b>Calculate</b></button>
+        <div class="result">Result</div>
+
+    </div>
+    
+</body>
+</html>
+<script>
+    window.onload = () => {
+        let button = document.querySelector('#buttonCal');
+        button.addEventListener('click', calculateBMI)
+    }
+    function calculateBMI(){
+        let height = document.querySelector('#height').value;
+        let weight = document.querySelector('#weight').value;
+        let result = document.querySelector('.result');
+        if(!height || height < 0 || isNaN(height)){
+            result.innerText = "Please enter a valid number for height";
+            return;
+        } else if(!weight || weight < 0 || isNaN(weight)){
+            result.innerText = "Please enter a valid number for weight";
+            return;
+
+        }
+
+        let bmi = weight / ((height / 100) *(height/100)).toFixed(2);
+        if(bmi < 18.4){
+            result.innerText = "Under weight"
+        } else if(bmi >= 18.5 && bmi < 24.9){
+            result.innerText = "Normal weight"
+
+        } else if(bmi >= 25 && bmi <= 29.9){
+            result.innerText = "Over weight"
+   
+        } else if(bmi >= 30){
+            result.innerText = "Obese"
+        } else {
+            result.innerText = "Extreme obesity"
+        }
+
+    }
+
+</script>
