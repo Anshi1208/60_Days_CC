@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript Slideshow</title>
+  <style>
+    #slideshow-container {
+      max-width: 400px;
+      max-height: 300px;
+      position: relative;
+     
+      overflow: hidden;
+    }
+
+    .slider-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      object-fit: cover; 
+    }
+    .slider-container button{
+        margin-top: 350px;
+        
+    }
+
+    .mySlides img {
+      width: auto;
+      height: 100%; /* Fix image height to container height */
+      object-fit: cover; /* Ensure the image covers the entire container */
+    }
+
+    button {
+      margin-top: 20px; /* Adjust button margin */
+    }
+  </style>
+</head>
+<body>
+
+<div class="slider-container">
+  <div id="slideshow-container">
+    <div class="mySlides"><img src="https://images.pexels.com/photos/268533/pexels-photo-268533.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Image 1"></div>
+    <!-- Add more slides with images -->
+    <div class="mySlides"><img src="https://cdn.pixabay.com/photo/2014/02/27/16/10/flowers-276014_640.jpg" alt="Image 2"></div>
+    <!-- Add more slides with images -->
+    <div class="mySlides"><img src="https://i.pinimg.com/736x/dd/97/3a/dd973ac116a977c8dd5296b0da504b8c.jpg" alt=""></div>
+    <div class="mySlides"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrdBnzgWA2eAhniVxTL-lh8HieefReQ_XL6m6gB5XDOw&s" alt=""></div>
+    <div class="mySlides"><img src="https://img.freepik.com/free-photo/digital-painting-mountain-with-colorful-tree-foreground_1340-25699.jpg?size=626&ext=jpg&ga=GA1.1.1880011253.1699488000&semt=ais" alt=""></div>
+    <div class="mySlides"><img src="https://cdn.pixabay.com/photo/2015/04/19/08/32/rose-729509_640.jpg" alt=""></div>
+    <div class="mySlides"><img src="https://st.depositphotos.com/2001755/3622/i/450/depositphotos_36220949-stock-photo-beautiful-landscape.jpg" alt=""></div>
+    <div class="mySlides"><img src="https://cdn.pixabay.com/photo/2018/01/12/10/19/fantasy-3077928_640.jpg" alt=""></div>
+    <div class="mySlides"><img src="https://www.befunky.com/images/prismic/1f427434-7ca0-46b2-b5d1-7d31843859b6_funky-focus-red-flower-field-after.jpeg?auto=avif,webp&format=jpg&width=863" alt=""></div>
+    <div class="mySlides"><img src="https://static4.depositphotos.com/1003326/319/i/450/depositphotos_3191160-stock-photo-blurry-bright-background.jpg" alt=""></div>
+    <div class="mySlides"><img src="https://pixlr.com/images/index/ai-image-generator-three.webp" alt=""></div>
+    <div class="mySlides"><img src="https://cdn.eso.org/images/thumb300y/eso1907a.jpg" alt=""></div>
+    <div class="mySlides"><img src="https://img.freepik.com/free-photo/beautiful-shot-crystal-clear-lake-snowy-mountain-base-during-sunny-day_181624-5459.jpg?size=626&ext=jpg&ga=GA1.1.1448711260.1706918400&semt=sph" alt=""></div>
+    <div class="mySlides"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfpPVBsOnmgFmh3zh00s9ubGN36eZbZ9s6PfJAO87Fug&s" alt=""></div>
+    <div class="mySlides"><img src="https://cdn.pixabay.com/photo/2015/04/19/08/32/rose-729509_640.jpg" alt=""></div>
+    <div class="mySlides"><img src="https://cdn.eso.org/images/thumb300y/eso1907a.jpg" alt=""></div>
+    <div class="mySlides"><img src="https://i.pinimg.com/736x/dd/97/3a/dd973ac116a977c8dd5296b0da504b8c.jpg" alt=""></div>
+    <div class="mySlides"><img src="https://cdn.pixabay.com/photo/2014/02/27/16/10/flowers-276014_640.jpg" alt=""></div>
+    <div class="mySlides"><img src="https://cdn.eso.org/images/thumb300y/eso1907a.jpg" alt=""></div>
+    <div class="mySlides"><img src="https://cdn.eso.org/images/thumb300y/eso1907a.jpg" alt=""></div>
+  </div>
+
+  <button id="startStopBtn" onclick="toggleSlideshow()">Start</button>
+  <button onclick="plusSlides(-1)">Previous</button>
+  <button onclick="plusSlides(1)">Next</button>
+</div>
+
+<script>
+    let slideIndex = 0; 
+    let slideshowInterval;
+    let slideshowRunning = false;
+  
+    function slidesShow() {
+      let i;
+      const slides = document.getElementsByClassName("mySlides");
+      
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+  
+      slideIndex++;
+      if (slideIndex > slides.length) { slideIndex = 1; }
+  
+      slides[slideIndex - 1].style.display = "block";
+    }
+  
+    function plusSlides(n) {
+      clearInterval(slideshowInterval);
+      slideshowRunning = false;
+      slidesShow();
+    }
+  
+    function toggleSlideshow() {
+      if (slideshowRunning) {
+        clearInterval(slideshowInterval);
+        document.getElementById("startStopBtn").innerText = "Start";
+      } else {
+        slideshowInterval = setInterval(slidesShow, 1000);
+        document.getElementById("startStopBtn").innerText = "Stop";
+      }
+      slideshowRunning = !slideshowRunning;
+    }
+  
+    toggleSlideshow(); 
+</script>
+
+</body>
+</html>
