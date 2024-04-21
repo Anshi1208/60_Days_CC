@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <style>
+        body {
+            background-color: rgb(157, 157, 233);
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+
+        input {
+            width: 50px;
+            text-align: center;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 5px 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h2>Countdown Timer</h2>
+    
+    <label for="hours">Hours:</label>
+    <input type="number" id="hours" min="0" value="0"> 
+
+    <label for="minutes">Minutes:</label>
+    <input type="number" id="minutes" min="0" value="0"> 
+
+    <label for="seconds">Seconds:</label>
+    <input type="number" id="seconds" min="0" value="0"> 
+
+    <br>
+
+    <button type="button" onclick="startTimer()">Start</button>
+    <button type="button" onclick="pauseTimer()">Pause</button>
+    <button type="button" onclick="resetTimer()">Reset</button>
+
+    <h1 id="displayTime">00:00:00</h1>
+
+    <script>
+        let totalSeconds;
+        let timer;
+
+        function startTimer() {
+            totalSeconds = parseInt(document.getElementById("hours").value) * 3600 +
+                           parseInt(document.getElementById("minutes").value) * 60 +
+                           parseInt(document.getElementById("seconds").value);
+
+            if (timer) {
+                clearInterval(timer);
+            }
+
+            timer = setInterval(updateTimer, 1000);
+        }
+
+        function updateTimer() {
+            if (totalSeconds <= 0) {
+                clearInterval(timer);
+                document.getElementById("displayTime").innerHTML = "00:00:00";
+                alert("Timer is complete!");
+            } else {
+                let hours = Math.floor(totalSeconds / 3600);
+                let minutes = Math.floor((totalSeconds % 3600) / 60);
+                let seconds = totalSeconds % 60;
+
+                document.getElementById("displayTime").innerHTML = formatTime(hours) + ":" + formatTime(minutes) + ":" + formatTime(seconds);
+
+                totalSeconds--;
+            }
+        }
+
+        function pauseTimer() {
+            clearInterval(timer);
+        }
+
+        function resetTimer() {
+            clearInterval(timer);
+            document.getElementById("hours").value = 0;
+            document.getElementById("minutes").value = 0;
+            document.getElementById("seconds").value = 0;
+            document.getElementById("displayTime").innerHTML = "00:00:00";
+        }
+
+        function formatTime(time) {
+            return time < 10 ? "0" + time : time;
+        }
+    </script>
+</body>
+</html>
